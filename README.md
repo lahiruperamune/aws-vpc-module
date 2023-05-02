@@ -27,7 +27,7 @@ This is sample readme for terraform module
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_azs"></a> [azs](#input\_azs) | Availability Zones | `list(string)` | n/a | yes |
+| <a name="input_azs"></a> [azs](#input\_azs) | Availability Zones | `list(string)` | <pre>[<br>  "us-east-1a",<br>  "us-east-1b"<br>]</pre> | no |
 | <a name="input_cloudwatch_log_group"></a> [cloudwatch\_log\_group](#input\_cloudwatch\_log\_group) | destination cloudwatch log group | `string` | n/a | yes |
 | <a name="input_enable_dns_hostnames"></a> [enable\_dns\_hostnames](#input\_enable\_dns\_hostnames) | Enable DNS hostname, default is true | `bool` | `true` | no |
 | <a name="input_enable_dns_support"></a> [enable\_dns\_support](#input\_enable\_dns\_support) | Enable DNS resolution, default is true | `bool` | `true` | no |
@@ -36,6 +36,7 @@ This is sample readme for terraform module
 | <a name="input_enable_nat_gateway"></a> [enable\_nat\_gateway](#input\_enable\_nat\_gateway) | Enabling NAT gateway | `bool` | `true` | no |
 | <a name="input_flow_log_role_arn"></a> [flow\_log\_role\_arn](#input\_flow\_log\_role\_arn) | arn of the flow log role | `string` | n/a | yes |
 | <a name="input_instance_tenancy"></a> [instance\_tenancy](#input\_instance\_tenancy) | VPC tenancy, default is default | `string` | `"default"` | no |
+| <a name="input_no_of_azs"></a> [no\_of\_azs](#input\_no\_of\_azs) | Number of Availability Zones | `number` | <pre>[<br>  "2"<br>]</pre> | no |
 | <a name="input_private_route_cidr_block"></a> [private\_route\_cidr\_block](#input\_private\_route\_cidr\_block) | private route table cidr | `string` | n/a | yes |
 | <a name="input_private_subnet_cidrs"></a> [private\_subnet\_cidrs](#input\_private\_subnet\_cidrs) | Private Subnet CIDR | `list(string)` | n/a | yes |
 | <a name="input_public_route_cidr_block"></a> [public\_route\_cidr\_block](#input\_public\_route\_cidr\_block) | public route table cidr | `string` | n/a | yes |

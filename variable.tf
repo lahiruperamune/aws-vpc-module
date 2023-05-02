@@ -8,12 +8,23 @@ variable "vpc_cidr_block" {
   type = string
 }
 
+variable "no_of_azs" {
+  type        = number
+  description = "Number of Availability Zones"
+  default = [ "2" ]
+}
+
 variable "azs" {
   type        = list(string)
   description = "Availability Zones"
+  default = ["us-east-1a", "us-east-1b"]
+#  validation {
+#    error_message = "should be 1 or 2 AZs"
+#    condition     = !can(length(var.azs) > 2)
+#  }
   validation {
-    error_message = "should be 1 or 2 AZs"
-    condition     = !can(length(var.azs) > 2)
+    condition     = contains(["us-east-1a", "us-east-1b"], var.azs)
+    error_message = "Valid values for var: azs are (us-east-1a, us-east-1b)."
   }
 }
 
